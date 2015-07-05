@@ -47,7 +47,8 @@ public class StockMain
 		final Stock stock = factory.createStock();
 		final double dividendYield = StocksCalculator.calcDividendYield(marketprice, stock);
 		log.info("dividendYield = " + dividendYield);
-
+		final double priceEarningsRatio = StocksCalculator.priceEarningsRatio(marketprice, stock);
+		log.info("priceEarningsRatio = " + priceEarningsRatio);
 		final int tradesNumber = RandomUtil.randomWithRange(1, 20);
 		final int quantity = RandomUtil.randomWithRange(1, 100);
 		final List<StockTrade> trades = createTrades(tradesNumber, true, quantity);
